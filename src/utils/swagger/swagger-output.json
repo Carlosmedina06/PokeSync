@@ -1,0 +1,27 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "PokéSync API",
+    "description": "API RESTful de PokéSync",
+    "version": "1.0.0"
+  },
+  "basePath": "/api",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "securityDefinitions": {
+    "bearerAuth": {
+      "type": "apiKey",
+      "name": "authorization",
+      "in": "header",
+      "description": "Token JWT de autorizacion"
+    }
+  },
+  "paths": {},
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
+}

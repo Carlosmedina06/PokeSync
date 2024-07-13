@@ -1,0 +1,50 @@
+{
+  "name": "pokesync",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "ts-prepare": "ts-patch install -s",
+    "build": "rimraf ./build && npm run swagger-autogen && tsc",
+    "build:watch": "nodemon --watch 'src/**/*.ts' --exec 'rimraf ./build && npm run swagger-autogen && tsc'",
+    "start": "npm run build && node build/index.js",
+    "start:dev": "npm run ts-prepare && npm run swagger-autogen && npx nodemon --watch 'src/**/*.ts' --exec 'npx ts-node src/index.ts'",
+    "swagger-autogen": "node src/utils/swagger/swagger.ts"
+  },
+  "keywords": [],
+  "author": "carlosmedina06",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "morgan": "^1.10.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1",
+    "winston": "^3.13.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.10",
+    "nodemon": "^3.1.4",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "ts-patch": "^3.2.1",
+    "tsc-alias": "^1.8.10",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.5.3",
+    "typescript-transform-paths": "^3.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/morgan": "^1.9.9",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "6.19.0",
+    "@typescript-eslint/parser": "6.19.0",
+    "prettier": "3.2.4",
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-config-standard": "17.1.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "5.1.3"
+  }
+}
