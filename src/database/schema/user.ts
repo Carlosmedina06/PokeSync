@@ -1,14 +1,6 @@
-import mongoose, { Document, Schema } from 'mongoose'
+import mongoose, { Schema } from 'mongoose'
 
-interface IUser extends Document {
-  username: string
-  email: string
-  password: string
-  allPokemons: Schema.Types.ObjectId[]
-  currentPokemons: Schema.Types.ObjectId[]
-  createdAt: Date
-  updatedAt: Date
-}
+import IUser from '@/interfaces/iuser'
 
 const UserSchema = new Schema<IUser>({
   username: {
